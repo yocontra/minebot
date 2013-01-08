@@ -9,7 +9,7 @@
    
    "dependencies":{
       "coffee-script":"*",
-      "mineflayer":"*"
+      "mineflayer":"git://github.com/Contra/mineflayer.git"
    },
    "devDependencies":{
       "mocha":"*",

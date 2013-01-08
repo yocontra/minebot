@@ -1,9 +1,5 @@
 minebot = require '../'
 
-process.env.MC_USER = "Bomb"
-process.env.MC_EMAIL = "contra@maricopa.edu"
-process.env.MC_PASS = "coding2424"
-
 client = minebot.createClient
   #host: "mc.diamcraft.com"
   host: "mc.toxicterritory.org"
@@ -30,13 +26,7 @@ client.on 'nonSpokenChat', (msg, raw) ->
   console.log "[Chat] #{raw}"
 
 client.on 'radarChange', ->
-  #console.log client.entity
-  #console.log Object.keys(client.radar).length
-
-client.on 'inventoryUpdate', ->
-  console.log client.entity.inventory
-  console.log client.entity.quickBar
-  console.log client.entity.equipment
-  client.hold 8
+  console.log client.radar
+  
 
 module.exports = client
