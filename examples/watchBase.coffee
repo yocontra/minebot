@@ -1,5 +1,9 @@
 minebot = require '../'
 
+process.env.MC_USER = "Bomb"
+process.env.MC_EMAIL = "contra@maricopa.edu"
+process.env.MC_PASS = "coding2424"
+
 client = minebot.createClient
   #host: "mc.diamcraft.com"
   host: "mc.toxicterritory.org"
@@ -17,7 +21,7 @@ client.on 'death', -> console.log "Died"
 client.on 'end', -> process.exit()
 
 client.on 'health', ->
-  console.log "I have #{bot.food} health and #{client.food} food"
+  console.log "I have #{client.food} health and #{client.food} food"
 
 client.on 'chat', (user, msg, raw) ->
   console.log "[Chat] #{user}: #{msg}"
@@ -31,5 +35,8 @@ client.on 'radarChange', ->
 
 client.on 'inventoryUpdate', ->
   console.log client.entity.inventory
+  console.log client.entity.quickBar
+  console.log client.entity.equipment
+  client.hold 8
 
 module.exports = client
