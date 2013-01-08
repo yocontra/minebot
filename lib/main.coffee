@@ -30,7 +30,7 @@ radar = (c, opt) ->
       delete c.radar[entity.username]
       c.emit 'radarRemove', entity
     else
-      c.radar[entity.username] = Math.floor c.entity.position.distanceTo entity.position
+      c.radar[entity.username] = c.entity.position.distanceTo entity.position
       c.emit 'radarMove', entity if type is 'move'
       c.emit 'radarSpawn', entity if type is 'spawn'
 
